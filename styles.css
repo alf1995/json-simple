@@ -1,0 +1,158 @@
+/* 1. Definición de Variables (Colores) */
+:root, [data-theme="light"] {
+  --bg: #ffffff; 
+  --text: #24292e; 
+  --key: #005cc5; 
+  --string: #032f62;
+  --number: #e36209; 
+  --boolean: #d73a49; 
+  --null: #6a737d;
+  --ui-bg: #f6f8fa; 
+  --ui-border: #e1e4e8; 
+  --hover: #f1f1f1;
+}
+
+[data-theme="dark"] {
+  --bg: #1e1e1e; 
+  --text: #d4d4d4; 
+  --key: #9cdcfe; 
+  --string: #ce9178;
+  --number: #b5cea8; 
+  --boolean: #569cd6; 
+  --null: #569cd6;
+  --ui-bg: #2d2d2d; 
+  --ui-border: #404040; 
+  --hover: #3d3d3d;
+}
+
+/* 2. Estilos Base (Solo cuando la extensión está activa) */
+body.json-viewer-active {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Cascadia Code', 'Consolas', monospace !important;
+  margin: 0 !important; 
+  padding-top: 50px !important;
+  display: block !important;
+}
+
+/* 3. Toolbar (Barra superior) */
+#json-toolbar {
+  position: fixed; 
+  top: 0; left: 0; right: 0; height: 45px;
+  background: var(--ui-bg); 
+  border-bottom: 1px solid var(--ui-border);
+  display: flex; 
+  align-items: center; 
+  padding: 0 15px; 
+  z-index: 2147483647;
+  gap: 12px; 
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--text);
+}
+
+#json-container {
+    padding: 20px;
+    background-color: var(--bg);
+}
+
+/* 4. Buscador y Botones */
+.search-container {
+    display: flex; 
+    align-items: center; 
+    background: var(--bg);
+    border: 1px solid var(--ui-border); 
+    border-radius: 6px;
+    padding: 0; 
+    width: 300px; 
+    overflow: hidden;
+}
+
+#json-search {
+    flex-grow: 1; 
+    border: none; 
+    background: transparent;
+    color: var(--text); 
+    outline: none; 
+    padding: 8px 12px; 
+    font-size: 13px;
+}
+
+.search-info { 
+    font-size: 11px; 
+    color: var(--null); 
+    min-width: 40px; 
+    text-align: center; 
+}
+
+.nav-btn {
+    background: transparent; 
+    border: none; 
+    border-left: 1px solid var(--ui-border);
+    color: var(--text); 
+    cursor: pointer; 
+    padding: 8px 10px; 
+    font-size: 10px;
+}
+
+.nav-btn:hover { background: var(--hover); }
+
+.tool-btn, #theme-selector {
+    background: var(--bg); 
+    border: 1px solid var(--ui-border);
+    color: var(--text); 
+    cursor: pointer; 
+    padding: 6px 12px;
+    border-radius: 4px; 
+    font-size: 12px;
+}
+
+.tool-btn:hover, #theme-selector:hover { background: var(--hover); }
+
+/* 5. Estructura del JSON */
+.entry { 
+    margin-left: 15px; 
+    line-height: 1.5; 
+    white-space: nowrap; 
+}
+
+.json-node { 
+    border-left: 1px solid var(--ui-border); 
+    margin-left: 8px; 
+}
+
+.toggle-btn {
+    cursor: pointer; 
+    display: inline-block; 
+    width: 16px;
+    text-align: center; 
+    color: var(--null);
+}
+
+.collapsed > .json-node { display: none; }
+.collapsed > .line::after { 
+    content: " ... }"; 
+    color: var(--null); 
+    margin-left: 5px; 
+}
+
+.json-key { color: var(--key); font-weight: bold; }
+.json-string { color: var(--string); }
+.json-number { color: var(--number); }
+.json-boolean { color: var(--boolean); }
+.json-null { color: var(--null); }
+
+/* 6. Resaltado de búsqueda */
+.search-match { 
+    background-color: rgba(255, 235, 59, 0.3); 
+    border-radius: 2px; 
+}
+
+[data-theme="dark"] .search-match {
+    background-color: rgba(255, 235, 59, 0.15);
+}
+
+.search-match.current { 
+    background-color: #ff9800 !important; 
+    color: #000 !important; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}

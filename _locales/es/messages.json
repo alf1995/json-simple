@@ -1,0 +1,9 @@
+{
+  "extName": { "message": "JSON Simple" },
+  "extDesc": { "message": "Visualizador de JSON ligero y rápido" },
+  "searchPlaceholder": { "message": "Buscar..." },
+  "copyBtn": { "message": "Copiar JSON" },
+  "copiedBtn": { "message": "¡Copiado!" },
+  "collapseAll": { "message": "Colapsar Todo" },
+  "expandAll": { "message": "Expandir Todo" }
+}
