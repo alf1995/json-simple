@@ -2,6 +2,8 @@
 
 Una extensión de navegador ligera y funcional diseñada para desarrolladores que buscan una visualización estructurada y limpia de respuestas JSON. Esta herramienta transforma el texto plano en una interfaz interactiva con resaltado de sintaxis y herramientas de búsqueda.
 
+[Haz clic aquí](https://chromewebstore.google.com/detail/json-simple/dinialclbahnojghhgpcmfjlldlhlenj)
+
 ---
 
 ## ✨ Características Principales
